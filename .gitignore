@@ -1,0 +1,21 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+storage/
+*.db
+prof.out
+data/generator/.cache/
+*-1920.png
+frontend/dist/
+docs/screenshots/_scan/
+*.log
+.pytest_cache/
+.vscode/
+
+# needed by the deployed demo (Evaluation page and clean demo database)
+!data/ekatra.clean.db
+
+# Local deployment kit archive and extracted copy
+Ekatra_deploy_kit.zip
+Ekatra_deploy_kit/
