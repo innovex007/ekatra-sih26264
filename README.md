@@ -1,15 +1,4 @@
-﻿---
-title: Ekatra – SIH26264
-emoji: 🏛️
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-app_port: 7860
-pinned: false
-short_description: Prototype (synthetic data) – Team Innovex_007
----
-
-# Ekatra · एकत्र
+﻿# Ekatra · एकत्र
 
 **SIH26264 – Integrated Dashboard for Monitoring and Tracking Institution-Related Complaint Cases Across AICTE Bureaus/Cells**
 

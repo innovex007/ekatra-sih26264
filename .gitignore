@@ -32,9 +32,6 @@ docs/screenshots/_scan/
 .vscode/
 .idea/
 
-# needed by the deployed demo (Evaluation page and clean demo database)
+# clean demo snapshot used by reset_demo
 !data/ekatra.clean.db
 
-# Local deployment kit archive
-Ekatra_deploy_kit.zip
-Ekatra_deploy_kit/
