@@ -1,0 +1,33 @@
+﻿# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+frontend/dist/
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# App data (regenerate with .\seed.ps1)
+*.db
+storage/
+data/generator/.cache/
+prof.out
+*.log
+
+# Large / scratch
+*-1920.png
+docs/screenshots/_scan/
+
+# Editor
+.vscode/
+.idea/

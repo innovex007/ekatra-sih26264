@@ -1,0 +1,75 @@
+# Every tunable threshold for Ekatra lives here.
+resolver:
+  weights: {name: 0.45, acronym: 0.15, location: 0.15, embedding: 0.25}
+  auto_link: 0.90          # >= auto-link
+  confirm_min: 0.60        # 0.60-0.89 officer confirms (alias is learned)
+  prefilter_trigram: 0.30
+  exact_name_floor: 0.92   # exact, unique known name/alias is enough identity even without a city/pincode
+  min_margin: 0.04         # best must beat runner-up (different institution) by this to auto-link
+  generic_df: 0.12         # tokens in more than this share of names are "generic" (institute, technology...)
+  exact_name_counts_as_acronym: 0.97   # a full-name match >= this fills the acronym/identity factor
+  e5_rescale: [0.82, 0.97]  # raw e5 cosine range mapped to 0..1
+  abbreviations:
+    engg: engineering
+    engr: engineering
+    inst: institute
+    instt: institute
+    tech: technology
+    technol: technology
+    coll: college
+    clg: college
+    univ: university
+    mgmt: management
+    poly: polytechnic
+    sri: shri
+    shree: shri
+    sree: shri
+    sciences: science
+  stopwords: [of, the, and, for, in, at, a, an]
+
+overlap:
+  category_weight: 0.4
+  text_weight: 0.6
+  conflicting_min: 0.6
+  duplicate_min: 0.85
+  related_min: 0.5
+  enforcement_actions: [show_cause, inspection]   # "active enforcement"
+  pending_disposal_actions: [dispose]             # "pending disposal"
+
+interlock:
+  mode: block              # block | warn (pilot mode); can be changed at runtime
+  guarded_actions: [dispose, show_cause, close]
+  blocking_severities: [CONFLICTING, DUPLICATE]
+  min_reason_chars: 10
+
+sla:
+  default_days: 21
+  warn_risk: 0.7
+  warn_days_left: 5
+  pingpong_transfers: 3
+  risk_weights: {age: 0.55, transfers: 0.15, backlog: 0.15, category: 0.15}
+  category_weight: {Ragging: 1.0, "Fees & refund": 0.7, Faculty: 0.6, Infrastructure: 0.5, "Norms violation": 0.6, Admission: 0.5, Other: 0.3}
+
+watchlist:
+  weights: {open: 0.3, bureaus: 0.25, overdue: 0.3, repeat: 0.15}
+
+systemic:                      # Hidden Connection Detective
+  window_days: 90              # open cases received in the last N days
+  min_categories: 3            # different problem categories ...
+  min_bureaus: 2               # ... reported to different Bureaus
+  min_score: 6.0               # categories x Bureaus x recency (0..1)
+  ignore_categories: [Other]
+  suggested_action: Joint inspection by the Bureaus involved, coordinated by a Lead Bureau
+
+contradiction:                 # Contradiction Detective
+  window_days: 60
+  topics: [lab, faculty, infrastructure, fees, safety]
+  verdicts: [compliant, non-compliant, not verified]   # only compliant vs non-compliant contradict
+
+riskdna:                       # Institutional Risk DNA
+  months: 6
+  bucket_days: 30
+  ratio: 0.4                   # recent-3-month load must differ from the older 3 by this share ...
+  min_delta: 1.5               # ... and by at least this much weighted load
+  noise_k: 1.5                 # ... and by more than k x sqrt(total load): ordinary month-to-month noise must not count as a trend
+  conflict_bonus: 0.5          # extra weight for a case that sits in a CONFLICTING / DUPLICATE link

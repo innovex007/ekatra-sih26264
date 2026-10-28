@@ -1,0 +1,164 @@
+{
+ "generated": "2026-10-27T19:51:07",
+ "seed": 42,
+ "resolver_method": "multilingual-e5-small",
+ "resolver_method_at_seed": "multilingual-e5-small",
+ "dataset": {
+  "cases": 2000,
+  "institutions": 98,
+  "planted_pairs": 56
+ },
+ "resolver": {
+  "all": {
+   "n": 2000,
+   "auto_linked": 1791,
+   "correct_auto": 1791,
+   "precision": 100.0,
+   "recall": 89.5,
+   "needs_confirmation": 207,
+   "top1_with_confirmation": 98.7
+  },
+  "clean": {
+   "n": 1204,
+   "auto_linked": 1147,
+   "correct_auto": 1147,
+   "precision": 100.0,
+   "recall": 95.3,
+   "needs_confirmation": 57,
+   "top1_with_confirmation": 98.8
+  },
+  "messy": {
+   "n": 796,
+   "auto_linked": 644,
+   "correct_auto": 644,
+   "precision": 100.0,
+   "recall": 80.9,
+   "needs_confirmation": 150,
+   "top1_with_confirmation": 98.6
+  },
+  "hindi": {
+   "n": 104,
+   "auto_linked": 81,
+   "correct_auto": 81,
+   "precision": 100.0,
+   "recall": 77.9,
+   "needs_confirmation": 23,
+   "top1_with_confirmation": 100.0
+  }
+ },
+ "false_links_per_1000": 0.0,
+ "wrong_auto_links": 0,
+ "overlaps": {
+  "true_cross_bureau_pairs": 3798,
+  "ekatra_found": 3096,
+  "exact_id_found": 477,
+  "multiplier": 6.5,
+  "ekatra_recall": 81.5,
+  "exact_id_recall": 12.6
+ },
+ "severity": {
+  "pairs": 56,
+  "classifier_accuracy": 100.0,
+  "end_to_end_accuracy": 85.7,
+  "confusion_classifier": {
+   "CONFLICTING": {
+    "CONFLICTING": 16
+   },
+   "DUPLICATE": {
+    "DUPLICATE": 12
+   },
+   "INFO": {
+    "INFO": 14
+   },
+   "RELATED": {
+    "RELATED": 14
+   }
+  },
+  "confusion_end_to_end": {
+   "CONFLICTING": {
+    "CONFLICTING": 15,
+    "MISSED": 1
+   },
+   "DUPLICATE": {
+    "DUPLICATE": 9,
+    "MISSED": 3
+   },
+   "INFO": {
+    "INFO": 13,
+    "MISSED": 1
+   },
+   "RELATED": {
+    "RELATED": 11,
+    "MISSED": 3
+   }
+  },
+  "labels": [
+   "CONFLICTING",
+   "DUPLICATE",
+   "RELATED",
+   "INFO",
+   "MISSED"
+  ]
+ },
+ "interlock": {
+  "attempts": 16,
+  "blocked": 15,
+  "control_cases": 200,
+  "false_triggers": 0
+ },
+ "v2": {
+  "cases_added": 182,
+  "institutions_added": 19,
+  "systemic": {
+   "planted": 5,
+   "found": 5,
+   "decoys": 5,
+   "decoys_flagged": 0,
+   "other_institutions_flagged": 34,
+   "total_flagged": 39,
+   "institutions_scored": 98
+  },
+  "contradictions": {
+   "planted": 6,
+   "found": 4,
+   "missed_due_to_unlinked_case": 2,
+   "controls": 8,
+   "controls_flagged": 0,
+   "controls_by_kind": {
+    "same_verdict": "0/3",
+    "far_apart": "0/3",
+    "same_bureau": "0/2"
+   },
+   "other_flagged": 0,
+   "total_flagged": 4
+  },
+  "riskdna": {
+   "correct": {
+    "worsening": 3,
+    "improving": 3,
+    "stable": 2
+   },
+   "planted": {
+    "worsening": 3,
+    "improving": 3,
+    "stable": 2
+   },
+   "background_trend_mix": {
+    "worsening": 6,
+    "stable": 70,
+    "improving": 4
+   }
+  }
+ },
+ "latency": {
+  "dashboard_p95_ms": 37.4,
+  "dashboard_median_ms": 29.7,
+  "cases_p95_ms": 37.8,
+  "n_cases": 2000
+ },
+ "institution_360": {
+  "api_p95_ms": 30.7,
+  "api_median_ms": 23.3,
+  "manual_baseline": "to be measured with a stopwatch (open 4 Bureau systems + spreadsheet)"
+ }
+}
