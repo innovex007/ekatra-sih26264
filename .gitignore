@@ -31,3 +31,10 @@ docs/screenshots/_scan/
 # Editor
 .vscode/
 .idea/
+
+# needed by the deployed demo (Evaluation page and clean demo database)
+!data/ekatra.clean.db
+
+# Local deployment kit archive
+Ekatra_deploy_kit.zip
+Ekatra_deploy_kit/

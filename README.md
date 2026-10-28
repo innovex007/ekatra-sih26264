@@ -1,3 +1,14 @@
+﻿---
+title: Ekatra – SIH26264
+emoji: 🏛️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+short_description: Prototype (synthetic data) – Team Innovex_007
+---
+
 # Ekatra · एकत्र
 
 **SIH26264 – Integrated Dashboard for Monitoring and Tracking Institution-Related Complaint Cases Across AICTE Bureaus/Cells**
@@ -170,3 +181,4 @@ Start from `.\reset_demo.ps1`, then open http://localhost:5174.
 `backend/app` API and logic · `backend/app/rules/ekatra_rules.yaml` thresholds · `data/generator` synthetic data · `data/answer_key.json` ground truth · `eval/` evaluation · `frontend/` UI · `scripts/` Playwright tests (`demo.mjs` interlock click-through, `audit_pages.mjs` every page/tab, `test_reports.mjs` exports, `screenshots.mjs`, `v2shots.mjs`) and `reset_demo.py`.
 
 Source size without ignored files (`node_modules`, `.venv`, `__pycache__`, `*.db`, `frontend/dist`, `*-1920.png`): **about 3.1 MB in 94 files**.
+
